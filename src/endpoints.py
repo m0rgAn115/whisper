@@ -3,17 +3,6 @@ import logging
 import tempfile
 from flask import jsonify, request
 from utils import is_valid_audio_format, SUPPORTED_FORMATS
-from speechbrain.pretrained import SpeakerRecognition
-import torch
-
-try:
-    verification = SpeakerRecognition.from_hparams(
-        source="speechbrain/spkrec-ecapa-voxceleb",
-        savedir="pretrained_models/spkrec-ecapa-voxceleb"
-    )
-except Exception as e:
-    logging.error(f"Error initializing SpeechBrain model: {str(e)}")
-    verification = None
 
 def register_endpoints(app):
     """Register all endpoints to the Flask app."""

@@ -5,6 +5,4 @@ config
 endpoints
 python-dotenv
 openai
-speechbrain
-torchaudio
-soundfile
+gunicorn

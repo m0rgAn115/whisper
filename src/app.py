@@ -3,7 +3,6 @@ from flask_cors import CORS
 from py_eureka_client import eureka_client
 from config import configure_app
 from endpoints import register_endpoints
-from spechbrain import register_endpoints2
 
 app = Flask(__name__)
 
