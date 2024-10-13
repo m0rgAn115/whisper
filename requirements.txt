@@ -4,3 +4,4 @@ config
 endpoints
 python-dotenv
 openai
+python-dotenv
