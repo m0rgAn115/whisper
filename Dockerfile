@@ -18,7 +18,6 @@ EXPOSE 8080
 
 # Establecer la variable de entorno para que Flask escuche en todas las interfaces
 ENV FLASK_APP=app.py
-ENV PORT=8080  # Establecer el puerto en el que la aplicación escuchará
 
 # Comando para ejecutar la aplicación con Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
