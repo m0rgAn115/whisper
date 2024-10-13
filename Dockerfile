@@ -1,23 +1,22 @@
-# Utilizar una imagen base oficial de Python
-FROM python:3.10-slim
+# Usa una imagen base de Python
+FROM python:3.11
 
-# Establecer el directorio de trabajo en el contenedor
+# Establece el directorio de trabajo
 WORKDIR /app
 
-# Copiar el archivo de requisitos
-COPY requirements.txt .
-
-# Instalar las dependencias
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copiar el resto del código de la aplicación
+# Copia el archivo de requisitos y el código fuente al contenedor
+COPY requirements.txt requirements.txt
 COPY . .
 
-# Exponer el puerto 8080
-EXPOSE 8080
+# Instala las dependencias
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Establecer la variable de entorno para que Flask escuche en todas las interfaces
-ENV FLASK_APP=app.py
+# Expon el puerto en el que Flask correrá
+EXPOSE 8000
 
-# Comando para ejecutar la aplicación con Gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
+# Establece la variable de entorno para el entorno de Flask
+ENV FLASK_APP=src/app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+
+# Comando para ejecutar la aplicación
+CMD ["flask", "run"]

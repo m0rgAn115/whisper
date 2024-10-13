@@ -4,4 +4,3 @@ config
 endpoints
 python-dotenv
 openai
-gunicorn
