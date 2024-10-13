@@ -1,4 +1,3 @@
-py-eureka-client
 flask
 flask_cors
 config
