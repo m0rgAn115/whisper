@@ -1,0 +1,10 @@
+py-eureka-client
+flask
+flask_cors
+config
+endpoints
+python-dotenv
+openai
+speechbrain
+torchaudio
+soundfile
